@@ -1,4 +1,4 @@
-public class Insertion {
+public class InsertionSLL {
 
   Node head;
 
@@ -71,7 +71,7 @@ public class Insertion {
 
   public static void main(String[] args){
 
-    Insertion list = new Insertion();
+    InsertionSLL list = new InsertionSLL();
 
     list.insertAtEnd(10);
     list.insertAtEnd(20);
