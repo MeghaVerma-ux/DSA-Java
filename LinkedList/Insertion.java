@@ -16,6 +16,7 @@ public class Insertion {
     Node newNode = new Node(data);
     newNode.next = head;
     head = newNode;
+    return;
   }
 
   public void insertAtEnd(int data){
