@@ -44,7 +44,7 @@ public class Deletion {
     
   }
 
-  public void insertAtPosition(){
+  public void deleteAtPosition(){
 
     if(head == null){
       System.out.println("List is empty");
