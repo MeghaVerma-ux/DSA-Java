@@ -1,4 +1,4 @@
-public class Deletion {
+public class DeletionSLL {
 
   Node head;
 
@@ -88,7 +88,7 @@ public class Deletion {
 
   public static void main(String[] args){
 
-    Deletion list = new Deletion();
+    DeletionSLL list = new DeletionSLL();
 
     list.deleteAtBeginning();
     list.deleteAtEnd();
