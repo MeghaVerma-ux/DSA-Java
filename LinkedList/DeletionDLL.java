@@ -11,7 +11,7 @@ public class DeletionDLL {
     }
   }
 
-  public void deleteAtBeginning {
+  public void deleteAtBeginning(){
 
     if(head == null){
       System.out.println("List is empty");
