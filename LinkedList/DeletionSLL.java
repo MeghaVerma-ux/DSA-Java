@@ -44,7 +44,7 @@ public class DeletionSLL {
     
   }
 
-  public void deleteAtPosition(){
+  public void deleteAtPosition(int position){
 
     if(head == null){
       System.out.println("List is empty");
