@@ -60,7 +60,7 @@ public class InsertionnDLL {
       temp = temp.next;
     }
 
-    if(temp.next == null){
+    if(temp == null){
       System.out.println("Invalid position");
       return;
     }
