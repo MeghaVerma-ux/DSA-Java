@@ -38,7 +38,8 @@ public class DeletionDLL {
     }
 
     Node temp = head;
-    while(temp != null){
+    
+    while(temp.next != null){
       temp = temp.next;
     }
 
@@ -61,6 +62,39 @@ public class DeletionDLL {
 
     Node temp = head;
 
-    for(){}
+    for(int i = 1; i < position && temp != null; i++){
+      temp = temp.next;
+    }
+    if(temp == null){
+      System.out.println("Invalid position");
+      return;
+    }
+    if(temp.next != null){
+      temp.next.prev = temp.prev;
+    }
+    if(temp.prev != null){
+      temp.prev.next = temp.next;
+    }
+  }
+
+  public void display(){
+
+    Node temp = head;
+
+    while(temp != null){
+      System.out.println(temp.data + "⇄");
+      temp = temp.next;   
+    }
+    System.out.println("null");
+  }
+
+  public static void main(String[] args){
+    DeletionDLL list = new DeletionDLL();
+
+    list.deleteAtBeginning();
+    list.deleteAtEnd();
+    list.deleteAtPosition(3);
+
+    list.display();
   }
 }
