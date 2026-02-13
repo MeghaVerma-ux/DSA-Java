@@ -56,7 +56,7 @@ public class InsertionnDLL {
 
     Node temp = head;
 
-    for(int i = 1; i < position - 1 && temp.next != null; i++){
+    for(int i = 1; i < position - 1 && temp != null; i++){
       temp = temp.next;
     }
 
