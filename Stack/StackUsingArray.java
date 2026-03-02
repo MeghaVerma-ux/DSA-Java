@@ -4,7 +4,7 @@ public class StackUsingArray {
   private int top;
   private int capacity;
 
-  public StackUsingArray(size){
+  public StackUsingArray(int size){
 
     capacity = size;
     arr = new int[capacity];
