@@ -6,7 +6,7 @@ public class StackUsingLinkedList {
     int data;
     Node next;
 
-    Node(data){
+    Node(int data){
       this.data = data;
       this.next = null;
     }
