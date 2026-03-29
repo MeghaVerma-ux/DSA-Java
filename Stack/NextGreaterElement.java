@@ -3,7 +3,7 @@ public class NextGreaterElement{
   public static int[] nextGreater(int[] arr){
 
     int n = arr.length;
-    int[] res = new int[n];
+    int[] result = new int[n];
 
     Stack<Integer> stack = new Stack<>();
 
