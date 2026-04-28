@@ -19,7 +19,7 @@ public class TraversalBFS {
 
     while(!q.isEmpty()) {
       Node curr = q.remove();
-      System.out.println(q.data + " ");
+      System.out.println(curr.data + " ");
 
       if(curr.left != null) q.add(curr.left);
       if(curr.right != null) q.add(curr.right);
