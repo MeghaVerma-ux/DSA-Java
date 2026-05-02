@@ -14,16 +14,39 @@ class BST {
 
   Node root;
 
-  Node insert(Node root , int data){
+  Node insert(Node root , int val){
 
     if(root == null) {
       return new Node(data);
     }
-    if(data < root.data){
-      root.left = insert(root.left , data);
+    if(val < root.data){
+      root.left = insert(root.left , val);
     }
     else{
-      root.right = insert(root.right , data);
+      root.right = insert(root.right , val);
+    }
+
+    return root;
+  }
+
+  Node delete(Node root , int val) {
+    if(root == null) return null;
+
+    if(val < root.data) {
+      root.left = delete(root.left , val);
+    } else if(val > root.data) {
+      root.right = delete(root.right , val);
+    }
+    else{
+
+      if(root.left == null && root.right == null) return null;
+
+      if(root.right == null) return root.left;
+      if(root.left == null) return root.right;
+
+      Node successor = findMin(root.right);
+      root.data = successor.data;
+      root.right = delete(root.right , successor.data);
     }
 
     return root;
