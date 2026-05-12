@@ -17,7 +17,7 @@ class BST {
   Node insert(Node root , int val){
 
     if(root == null) {
-      return new Node(data);
+      return new Node(val);
     }
     if(val < root.data){
       root.left = insert(root.left , val);
