@@ -15,7 +15,7 @@ public class TraversalDFS {
 
     System.out.println(root.data + " ");
     preorder(root.left);
-    preoredr(root.right);
+    preorder(root.right);
   }
 
   static void inorder(Node root) {
