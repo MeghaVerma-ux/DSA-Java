@@ -2,7 +2,7 @@ import java.util.Scanner ;
 
 public class MinStack {
 
-  Stack<Integer> stack = new stack<>();
+  Stack<Integer> stack = new Stack<>();
   Stack<Integer> minStack = new Stack<>();
 
   public void push(int val) {
