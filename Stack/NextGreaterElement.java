@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.util.Arrays;
+import java.util.Stack;
 public class NextGreaterElement{
   public static int[] nextGreater(int[] arr){
 
@@ -10,12 +12,12 @@ public class NextGreaterElement{
     for(int i = n - 1; i >= 0; i--){
 
 
-      while(!stack.isEmpty() && stack.peek <= arr[i]){
+      while(!stack.isEmpty() && stack.peek() <= arr[i]){
         stack.pop();
       }
 
       if(stack.isEmpty()){
-        return false;
+         result[i] = -1;
       }
 
       else{
