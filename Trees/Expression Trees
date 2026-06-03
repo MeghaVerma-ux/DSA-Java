@@ -1,0 +1,58 @@
+# Expression Trees
+
+An Expression Tree is a binary tree used to represent arithmetic and logical expressions. In this structure, operators are stored as internal nodes, while operands are stored as leaf nodes.
+
+## Key Concepts
+
+* Operators (`+`, `-`, `*`, `/`) form the internal nodes of the tree.
+* Operands (variables or constants) form the leaf nodes.
+* The hierarchical structure of the tree naturally represents operator precedence and evaluation order.
+
+### Example
+
+Expression:
+
+(A + B) * C
+
+Expression Tree:
+
+```text
+        *
+       / \
+      +   C
+     / \
+    A   B
+```
+
+## Relationship with Tree Traversals
+
+* **Preorder Traversal** → Prefix Expression
+* **Inorder Traversal** → Infix Expression
+* **Postorder Traversal** → Postfix Expression
+
+For the above tree:
+
+* Prefix: `* + A B C`
+* Infix: `(A + B) * C`
+* Postfix: `A B + C *`
+
+## Constructing an Expression Tree Using a Stack
+
+1. Scan the postfix expression from left to right.
+2. If the symbol is an operand, create a node and push it onto the stack.
+3. If the symbol is an operator:
+
+   * Pop two nodes from the stack.
+   * First popped node becomes the right child.
+   * Second popped node becomes the left child.
+   * Create a new operator node and attach the children.
+   * Push the new subtree back onto the stack.
+4. After processing the entire expression, the remaining node on the stack is the root of the Expression Tree.
+
+## Applications
+
+* Expression evaluation
+* Compiler design
+* Syntax tree construction
+* Mathematical expression processing
+* Conversion between Prefix, Infix, and Postfix notations
