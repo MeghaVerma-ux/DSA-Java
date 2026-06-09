@@ -1,0 +1,123 @@
+# Tree Implementation
+
+A tree is a hierarchical data structure consisting of nodes connected by edges. In memory, trees can be represented using two common approaches:
+
+## 1. Linked List Representation
+
+In the linked list representation, each node stores:
+
+* Data
+* Reference to the left child
+* Reference to the right child
+
+### Node Structure
+
+```java
+class Node {
+    int data;
+    Node left;
+    Node right;
+}
+```
+
+### Example
+
+Tree:
+
+```text
+      10
+     /  \
+    5   20
+```
+
+Representation:
+
+```text
+Node(10)
+├── left  → Node(5)
+└── right → Node(20)
+```
+
+### Advantages
+
+* Dynamic size
+* Easy insertion and deletion
+* Memory allocated only when needed
+
+### Disadvantages
+
+* Extra memory required for pointers
+
+---
+
+## 2. Array Representation
+
+In the array representation, tree nodes are stored level by level in an array.
+
+### Example
+
+Tree:
+
+```text
+        A
+       / \
+      B   C
+     / \
+    D   E
+```
+
+Array:
+
+```text
+Index : 0  1  2  3  4
+Value : A  B  C  D  E
+```
+
+### Important Formulas
+
+For a node at index `i`:
+
+* Left Child = `2*i + 1`
+* Right Child = `2*i + 2`
+* Parent = `(i - 1) / 2`
+
+### Example
+
+For node `B` at index `1`:
+
+```text
+Left Child  = 2(1) + 1 = 3 → D
+Right Child = 2(1) + 2 = 4 → E
+```
+
+### Advantages
+
+* Simple implementation
+* Efficient for complete binary trees
+* No need for pointers
+
+### Disadvantages
+
+* Wastes space for sparse trees
+* Fixed-size storage
+
+---
+
+## Comparison
+
+| Feature                           | Linked List | Array |
+| --------------------------------- | ----------- | ----- |
+| Dynamic Size                      | Yes         | No    |
+| Uses Pointers                     | Yes         | No    |
+| Easy Insertion/Deletion           | Yes         | No    |
+| Suitable for Complete Trees       | No          | Yes   |
+| Memory Efficient for Sparse Trees | Yes         | No    |
+
+---
+
+## Key Takeaways
+
+* Linked List representation stores nodes using references to left and right children.
+* Array representation stores nodes based on their position in the tree.
+* Array representation is best suited for complete binary trees.
+* Linked List representation is the most commonly used approach in practical applications.
