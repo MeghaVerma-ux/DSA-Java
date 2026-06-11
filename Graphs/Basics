@@ -1,0 +1,247 @@
+# Graphs
+
+A graph is a non-linear data structure consisting of a set of vertices (nodes) and edges (connections) between them. Unlike trees, graphs do not require a root node and can contain cycles.
+
+## Basic Terminology
+
+### Vertex (Node)
+
+A vertex is an individual element in a graph.
+
+Example:
+
+```text
+A, B, C, D
+```
+
+### Edge
+
+An edge represents a connection between two vertices.
+
+```text
+A ----- B
+```
+
+Edge: `(A, B)`
+
+---
+
+## Example Graph
+
+```text
+A ----- B
+|       |
+|       |
+C ----- D
+```
+
+### Vertices
+
+```text
+A, B, C, D
+```
+
+### Edges
+
+```text
+(A,B)
+(B,D)
+(D,C)
+(C,A)
+```
+
+---
+
+## Types of Graphs
+
+### 1. Undirected Graph
+
+```text
+A ----- B
+```
+
+A connection exists in both directions.
+
+```text
+A ↔ B
+```
+
+---
+
+### 2. Directed Graph (Digraph)
+
+```text
+A -----> B
+```
+
+The connection exists only in one direction.
+
+```text
+A → B
+```
+
+---
+
+### 3. Weighted Graph
+
+A graph where edges have weights or costs.
+
+```text
+A --5-- B
+ \     /
+  3   2
+   \ /
+    C
+```
+
+Weights:
+
+```text
+A-B = 5
+A-C = 3
+B-C = 2
+```
+
+---
+
+## Degree of a Vertex
+
+The degree of a vertex is the number of edges connected to it.
+
+Example:
+
+```text
+A ----- B
+|
+|
+C
+```
+
+Degree of A = 2
+
+---
+
+## Cycle
+
+A cycle occurs when a path starts and ends at the same vertex.
+
+```text
+A ----- B
+|       |
+|       |
+C ----- D
+```
+
+Cycle:
+
+```text
+A → B → D → C → A
+```
+
+---
+
+# Graph Representation
+
+Graphs can be represented in memory using two common methods:
+
+## 1. Adjacency Matrix
+
+An adjacency matrix is a 2D array where:
+
+* 1 indicates a connection exists.
+* 0 indicates no connection.
+
+### Example Graph
+
+```text
+A ----- B
+|
+|
+C
+```
+
+### Adjacency Matrix
+
+```text
+      A B C
+    --------
+A |   0 1 1
+B |   1 0 0
+C |   1 0 0
+```
+
+### Advantages
+
+* Easy to check whether two vertices are connected.
+* Simple implementation.
+
+### Disadvantages
+
+* Requires more memory.
+* Inefficient for sparse graphs.
+
+---
+
+## 2. Adjacency List
+
+An adjacency list stores the neighbors of each vertex.
+
+### Example Graph
+
+```text
+A ----- B
+|
+|
+C
+```
+
+### Adjacency List
+
+```text
+A → B → C
+
+B → A
+
+C → A
+```
+
+### Advantages
+
+* Memory efficient.
+* Ideal for sparse graphs.
+
+### Disadvantages
+
+* Checking whether two vertices are connected may take more time.
+
+---
+
+## Comparison
+
+| Feature       | Adjacency Matrix | Adjacency List |
+| ------------- | ---------------- | -------------- |
+| Storage       | 2D Array         | List           |
+| Memory Usage  | High             | Low            |
+| Edge Lookup   | Fast             | Slower         |
+| Sparse Graphs | Inefficient      | Efficient      |
+
+---
+
+## Applications of Graphs
+
+* Social Networks
+* Google Maps and Navigation Systems
+* Flight Route Networks
+* Computer Networks
+* Recommendation Systems
+* Web Page Linking
+
+---
+
+## Key Takeaways
+
+* A graph consists of vertices and edges.
+* Graphs can be directed, undirected, or weighted.
+* The degree of a vertex represents the number of connected edges.
+* Adjacency Matrix and Adjacency List are the two most common graph representations.
+* Adjacency List is generally preferred for sparse graphs due to better memory efficiency.
