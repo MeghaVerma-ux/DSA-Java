@@ -1,0 +1,169 @@
+# Graph Traversal: BFS and DFS
+
+Graph traversal refers to the process of visiting all vertices (nodes) in a graph in a systematic manner. The two most common traversal algorithms are **Breadth First Search (BFS)** and **Depth First Search (DFS)**.
+
+---
+
+# Breadth First Search (BFS)
+
+BFS visits vertices level by level, exploring all immediate neighbors before moving to the next level.
+
+## Data Structure Used
+
+```text
+Queue
+```
+
+## Algorithm
+
+1. Mark the starting node as visited.
+2. Add the starting node to the queue.
+3. While the queue is not empty:
+
+   * Remove a node from the front of the queue.
+   * Visit the node.
+   * Add all unvisited neighbors to the queue.
+
+## Example Graph
+
+```text
+      A
+     / \
+    B   C
+   / \
+  D   E
+```
+
+### BFS Traversal
+
+Starting from A:
+
+```text
+A B C D E
+```
+
+## Why Visited Array is Required
+
+Graphs may contain cycles.
+
+```text
+A ----- B
+|       |
+|       |
+C ----- D
+```
+
+Without a visited array, nodes may be visited repeatedly, causing infinite loops.
+
+---
+
+# Depth First Search (DFS)
+
+DFS explores a path as deeply as possible before backtracking.
+
+## Data Structure Used
+
+```text
+Recursion or Stack
+```
+
+## Recursive DFS Algorithm
+
+1. Mark the current node as visited.
+2. Visit the node.
+3. Recursively visit each unvisited neighbor.
+
+### Example Graph
+
+```text
+        A
+      / | \
+     B  C  D
+        |
+        E
+```
+
+### Recursive DFS Traversal
+
+```text
+A B C E D
+```
+
+---
+
+# Iterative DFS Using Stack
+
+Instead of recursion, DFS can be implemented using a stack.
+
+## Algorithm
+
+1. Push the starting node onto the stack.
+2. While the stack is not empty:
+
+   * Pop the top node.
+   * If unvisited:
+
+     * Mark it visited.
+     * Visit it.
+     * Push all unvisited neighbors onto the stack.
+
+### Stack-Based DFS Traversal
+
+For the same graph:
+
+```text
+A D C E B
+```
+
+Since a stack follows **LIFO (Last In First Out)**, the last inserted neighbor is visited first.
+
+---
+
+# BFS vs DFS
+
+| Feature                          | BFS            | DFS               |
+| -------------------------------- | -------------- | ----------------- |
+| Data Structure                   | Queue          | Stack / Recursion |
+| Traversal Style                  | Level by Level | Depth First       |
+| Backtracking                     | No             | Yes               |
+| Shortest Path (Unweighted Graph) | Yes            | No                |
+| Memory Usage                     | More           | Less              |
+| Time Complexity                  | O(V + E)       | O(V + E)          |
+
+Where:
+
+```text
+V = Number of Vertices
+E = Number of Edges
+```
+
+---
+
+# Applications of BFS
+
+* Shortest Path in Unweighted Graphs
+* Social Network Analysis
+* Web Crawling
+* Network Broadcasting
+* GPS and Navigation Systems
+
+---
+
+# Applications of DFS
+
+* Cycle Detection
+* Path Finding
+* Topological Sorting
+* Connected Components
+* Maze Solving
+* Backtracking Problems
+
+---
+
+# Key Takeaways
+
+* BFS uses a queue and explores nodes level by level.
+* DFS uses recursion or a stack and explores one path completely before backtracking.
+* A visited array is necessary in graph traversal to avoid revisiting nodes.
+* Both BFS and DFS have a time complexity of O(V + E).
+* BFS is preferred for shortest-path problems, while DFS is useful for deep exploration and backtracking.
